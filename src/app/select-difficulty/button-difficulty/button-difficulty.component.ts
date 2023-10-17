@@ -11,8 +11,6 @@ export class ButtonDifficultyComponent {
   constructor(private router: Router) { }
 
   navigateToQuestions(difficulty: string) {
-    this.router.navigate(['/quiz'], { queryParams: { playerName: 'NomDuJoueur', difficulty: difficulty } });
+    this.router.navigate(['/quiz'], { queryParams: { difficulty: difficulty } });
   }
-
-  
 }

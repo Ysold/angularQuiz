@@ -1,6 +1,9 @@
-<p>Hello, Select your difficulty !</p>
-<div class="container">
-    <button class="home_quiz-btn btn--outline" (click)="navigateToQuestions('quiz/:playerName')">Easy</button>
-    <button class="home_quiz-btn btn--outline" (click)="navigateToQuestions('quiz/:playerName')">Medium</button>
-    <button class="home_quiz-btn btn--outline" (click)="navigateToQuestions('quiz/:playerName')">Hard</button>
+<h1>Hello, Select your difficulty !</h1>
+<div class="container"> 
+    <button class="home_quiz-btn btn--outline"
+        *ngFor="let difficulty of categories"
+        [class.selected]="selectedDifficulty === difficulty.name"
+        (click)="navigateToQuestions(difficulty.name)">
+        {{ difficulty.name }}
+    </button>
 </div>

@@ -8,6 +8,7 @@ import { QuizService } from "../shared/services/quiz.service";
   styleUrls: ['./quiz.component.scss']
 })
 export class QuizComponent implements OnInit {
+  selectedDifficulty: string | null = null;
   isQuizFinished = this.quizService.isQuizFinished;
   playerName = '';
 
@@ -15,7 +16,17 @@ export class QuizComponent implements OnInit {
     private quizService: QuizService,
     private router: Router,
     private route: ActivatedRoute
-  ) { }
+  ) {
+    this.route.queryParams.subscribe(params => {
+      this.quizService.playerName = params['playerName'];
+      if (params['categories']) {
+        this.selectedDifficulty = params['categories']; 
+      }
+    });
+  }
+
+
+    
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {

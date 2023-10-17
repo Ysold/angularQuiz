@@ -4,6 +4,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh; /* Facultatif, pour centrer au milieu de la page */
+    height: 50vh; /* Facultatif, pour centrer au milieu de la page */
   }
   
+  .title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
